@@ -19,9 +19,9 @@ import os
 app = Flask(__name__)
 
 API_SECRET_KEY = '92782db9a8a24a56a2aee9a018266277'
-# uri = os.getenv("DATABASE_URL")  
-# if uri and uri.startswith("postgres://"):
-#     uri = uri.replace("postgres://", "postgresql://", 1)
+uri = os.getenv("DATABASE_URL")  
+if uri and uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL',"postgresql:///news_app") 
 
